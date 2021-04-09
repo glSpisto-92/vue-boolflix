@@ -22,6 +22,7 @@ let app = new Vue (
         .then((response) => {
         this.movies = response.data.results;
         })
+        this.nameMovie = '';
       }
     }
   }

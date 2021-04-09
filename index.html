@@ -28,13 +28,17 @@
       </header>
 
       <!-- card movie e info -->
-        <div class="card">
-          <div class="" v-for="movie in movies">{{movie.title}}</div>
-          <img src="" alt="">
-          <h3 class="title"></h3>
-          <span class="author"></span>
-          <span class="year"></span>
+      <div class="wrapper_card">
+        <div class="card" v-for="movie in movies">
+          <img :src=" 'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt="">
+          <div class="card_content">
+            <h3 class="title">{{movie.title}}</h3>
+            <span class="original_title">{{movie.original_title}}</span>
+            <span class="language">{{movie.original_language}}</span>
+            <span class="vote">{{movie.vote_average}}</span>
+          </div>
         </div>
+      </div>
 
     </div>
     <!-- javascript -->
