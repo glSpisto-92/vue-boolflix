@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: grey;
+}
+
+header{
+  height: 70px;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img{
+  width: 150px;
+  margin-left: 30px;
+}
+header input{
+  height: 25px;
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid #DB202C;
+  padding: 5px;
+}
+header input:focus{
+  outline: none;
+}
+
+.wrapper{
+  margin: 0 auto;
+}
+
+.inputs{
+  margin-right: 30px;
+}
+.inputs button{
+  padding: 2px;
+}
+
+.card{
+  
+}
