@@ -32,10 +32,6 @@ header input{
   color: #fff;
 }
 
-span {
-  /* display: inline-block; */
-}
-
 header input:focus{
   outline: none;
 }
@@ -76,12 +72,12 @@ header input:focus{
 
 .wrapper_card{
   display: flex;
+  align-content: center;
   flex-wrap: wrap;
-  margin: 10px;
 }
 
 .card{
-  width: 270px;
+  width: 260px;
   height: 400px;
   background: #333333;
   margin: 10px 5px;

@@ -7,7 +7,9 @@ let app = new Vue (
 
     },
     methods: {
-
+      // tramite la funzione richiamo la API con axios e passo i parametri
+      // di cui ho bisogno. Poi associo l'array movies con i risultati
+      // della api per poi stamparli nell' HTML
       searchMovie: function(){
 
         axios.get('https://api.themoviedb.org/3/search/movie?',{
@@ -20,6 +22,7 @@ let app = new Vue (
 
         })
         .then((response) => {
+          // nell'array vengono salvati tutti i risultati della api
         this.movies = response.data.results;
         })
         this.nameMovie = '';

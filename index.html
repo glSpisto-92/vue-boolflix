@@ -21,14 +21,15 @@
       <!-- header(logo e input search) -->
       <header>
         <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/210409/4937b74c6317b36c509baa13669b4b20.png" alt="netflix-font" border="0"></a>
-      <div class="inputs">
+      <div class="inputs">          <!--aggiungo il v-model per richiamare la proprietà in vue/data per fare la ricerca-->
         <input type="text" name="" value="" v-model="nameMovie" placeholder="Cosa vorresti vedere?">
         <button type="button" name="button" @click="searchMovie">Cerca</button>
-      </div>
+      </div>                      <!--aggiungo l'evento al click per mostrare i risultati richiamando la function js-->
       </header>
 
       <!-- card movie e info -->
       <div class="wrapper_card">
+                       <!--ciclo l'array di movies per associare i risultati che mi servono-->
         <div class="card" v-for="movie in movies">
           <img :src=" 'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt="">
 
