@@ -37,8 +37,8 @@
             <p><span class="font_style">Original title :</span> {{movie.original_title}}</p>
             <p><span class="font_style">Language :</span><img :src= " 'img/' + movie.original_language + '.png'" alt=""></p>
             <p><span class="font_style">Vote :</span> {{movie.vote_average}}</p>
-            <p><span class="font_style">Overview :</span> {{movie.overview}}</p>
-          </div>
+            <p><span class="font_style" v-if="movie.overview != ''">Overview :</span> {{movie.overview}}</p>
+          </div>                       <!--se overview è vuoto non mostrarlo-->
         </div>
       </div>
 
