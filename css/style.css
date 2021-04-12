@@ -126,7 +126,7 @@ header input:focus{
 
 .card_content p:last-child{
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -134,4 +134,6 @@ header input:focus{
  .card_content img{
   height: 25px;
   width: 25px;
+  margin-left: 10px;
+  vertical-align: bottom;
 }
