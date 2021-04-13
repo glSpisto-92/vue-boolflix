@@ -6,7 +6,6 @@ let app = new Vue (
       urlContent: 'https://api.themoviedb.org/3/search/',
       nameMovie: '',
       movies: [],
-      // series: [],
     },
     methods: {
       // tramite la funzione richiamo la API con axios e passo i parametri
@@ -27,6 +26,7 @@ let app = new Vue (
         this.movies = movieResults.data.results;
 
           axios.get(this.urlContent + 'tv',{
+
             params: {
               api_key: this.key,
               query: this.nameMovie,
@@ -34,13 +34,15 @@ let app = new Vue (
             }
           })
           .then((tvResults) => {
-
-            tvResults.foreach((item) => {
+            // ciclo i risultati delle serietv e li pusho nell'array movie cosi
+            // da avere film e serie tv
+            tvResults.data.results.forEach((item) => {
               this.movies.push(item);
             });
+            // svuoto il campo input solo dopo aver terminato le 2 chiamate
+            this.nameMovie = '';
           });
         });
-            this.nameMovie = '';
       }
     }
   }
