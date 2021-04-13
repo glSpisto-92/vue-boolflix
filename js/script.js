@@ -25,7 +25,7 @@ let app = new Vue (
           // nell'array vengono salvati tutti i risultati della api
 
         movieResults.data.results.forEach((item, i) => {
-          return Math.ceil(item.vote_average.toFixed() / 2); 
+          item.vote_average = Math.ceil(item.vote_average.toFixed() / 2);
         });
         this.movies = movieResults.data.results;
 
@@ -45,7 +45,7 @@ let app = new Vue (
             // this.movies.push(..tvResults.data.results);
 
             tvResults.data.results.forEach((item) => {
-              return Math.ceil(item.vote_average.toFixed() / 2);
+              item.vote_average = Math.ceil(item.vote_average.toFixed() / 2);
               this.movies.push(item);
             });
             // svuoto il campo input solo dopo aver terminato le 2 chiamate

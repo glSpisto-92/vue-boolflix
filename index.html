@@ -7,6 +7,8 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <!-- vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- axios cdn -->
@@ -40,7 +42,10 @@
             <p><span class="font_style">Title :</span> {{movie.title ? movie.title : movie.name}}</p>
             <p><span class="font_style">Original title :</span> {{movie.original_title || movie.original_name}}</p>
             <p><span class="font_style">Original lang:</span><img :src= " 'img/' + movie.original_language + '.png'" alt=""></p>
-            <p><span class="font_style">Vote :</span> {{movie.vote_average}}</p>
+            <p><span class="font_style">Vote :</span>
+              <!-- ciclo i voti dei film e li trasformo in stelle -->
+              <i v-for="n in movie.vote_average" class="fas fa-star"></i>
+              <i v-for="n in (5 - movie.vote_average)" class="far fa-star"></i></p>
             <p><span class="font_style" v-if="movie.overview">Overview :</span> {{movie.overview}}</p>
           </div>                       <!--se overview è vuoto non mostrarlo-->
         </div>
