@@ -74,6 +74,11 @@ header input:focus{
   align-content: center;
   flex-wrap: wrap;
 }
+.wrapper_card h2{
+  color: #fff;
+  font-size: 34px;
+  padding: 20px;
+}
 
 .card{
   width: 260px;
@@ -85,6 +90,9 @@ header input:focus{
   flex-direction: column;
   cursor: pointer;
   position: relative;
+  /* transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
 }
 .card img{
   width: 100%;
@@ -96,6 +104,7 @@ header input:focus{
 .card:hover {
   border: 1px solid #fff;
   background: #000;
+  /* transform: rotateY(180deg); */
 }
 
 .card_content p{

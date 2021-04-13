@@ -23,7 +23,13 @@ let app = new Vue (
         })
         .then((movieResults) => {
           // nell'array vengono salvati tutti i risultati della api
+
+        movieResults.data.results.forEach((item, i) => {
+          return Math.ceil(item.vote_average.toFixed() / 2); 
+        });
         this.movies = movieResults.data.results;
+
+
 
           axios.get(this.urlContent + 'tv',{
 
@@ -36,7 +42,10 @@ let app = new Vue (
           .then((tvResults) => {
             // ciclo i risultati delle serietv e li pusho nell'array movie cosi
             // da avere film e serie tv
+            // this.movies.push(..tvResults.data.results);
+
             tvResults.data.results.forEach((item) => {
+              return Math.ceil(item.vote_average.toFixed() / 2);
               this.movies.push(item);
             });
             // svuoto il campo input solo dopo aver terminato le 2 chiamate
