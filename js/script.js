@@ -25,20 +25,20 @@ let app = new Vue (
         .then((movieResults) => {
           // nell'array vengono salvati tutti i risultati della api
         this.movies = movieResults.data.results;
-        //
-        //   axios.get(this.urlContent + 'tv',{
-        //     params: {
-        //       api_key: this.key,
-        //       query: this.nameMovie,
-        //       language: 'it-IT',
-        //     }
-        //   }
-        //   .then((tvResults) => {
-        //
-        //     tvResults.foreach((item) => {
-        //       this.movies.push(item);
-        //     });
-        //   });
+
+          axios.get(this.urlContent + 'tv',{
+            params: {
+              api_key: this.key,
+              query: this.nameMovie,
+              language: 'it-IT',
+            }
+          })
+          .then((tvResults) => {
+
+            tvResults.foreach((item) => {
+              this.movies.push(item);
+            });
+          });
         });
             this.nameMovie = '';
       }
