@@ -6,6 +6,7 @@ let app = new Vue (
       urlContent: 'https://api.themoviedb.org/3/search/',
       nameMovie: '',
       movies: [],
+      series: []
     },
     methods: {
       // tramite la funzione richiamo la API con axios e passo i parametri
@@ -29,28 +30,27 @@ let app = new Vue (
         });
         this.movies = movieResults.data.results;
 
+        });
+        // API series
+        axios.get(this.urlContent + 'tv',{
 
+          params: {
+            api_key: this.key,
+            query: this.nameMovie,
+            language: 'it-IT',
+          }
+        })
+        .then((tvResults) => {
+          // ciclo i risultati delle serietv e li pusho nell'array movie cosi
+          // da avere film e serie tv
+          // this.movies.push(..tvResults.data.results);
 
-          axios.get(this.urlContent + 'tv',{
-
-            params: {
-              api_key: this.key,
-              query: this.nameMovie,
-              language: 'it-IT',
-            }
-          })
-          .then((tvResults) => {
-            // ciclo i risultati delle serietv e li pusho nell'array movie cosi
-            // da avere film e serie tv
-            // this.movies.push(..tvResults.data.results);
-
-            tvResults.data.results.forEach((item) => {
-              item.vote_average = Math.ceil(item.vote_average.toFixed() / 2);
-              this.movies.push(item);
-            });
-            // svuoto il campo input solo dopo aver terminato le 2 chiamate
-            this.nameMovie = '';
+          tvResults.data.results.forEach((item) => {
+            item.vote_average = Math.ceil(item.vote_average.toFixed() / 2);
           });
+          this.series = tvResults.data.results;
+          // svuoto il campo input solo dopo aver terminato le 2 chiamate
+          this.nameMovie = '';
         });
       }
     }

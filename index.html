@@ -25,32 +25,47 @@
         <a href=""><img src="https://fontmeme.com/permalink/210409/4937b74c6317b36c509baa13669b4b20.png" alt="netflix-font" border="0"></a>
       <div class="inputs">          <!--aggiungo il v-model per richiamare la proprietà in vue/data per fare la ricerca-->
         <input type="text" name="" value="" v-model="nameMovie" @keyup.enter="searchMovie()" placeholder="Cosa vorresti vedere?">
-        <button type="button" name="button" @click="searchMovie">Cerca</button>
+        <button type="button" name="button" @click="searchMovie"><i class="fas fa-search"></i></button>
       </div>                      <!--aggiungo l'evento al click per mostrare i risultati richiamando la function js-->
       </header>
 
       <!-- card movie e info -->
+      <h2 v-if="movies.length != 0">Film</h2>
       <div class="wrapper_card">
-        <div v-if="movies.length == 0">
-          <h2>Esegui una ricerca!</h2>
-        </div>
                        <!--ciclo l'array di movies per associare i risultati che mi servono-->
         <div class="card" v-for="movie in movies">
           <img :src=" movie.poster_path ? 'https://image.tmdb.org/t/p/w300/' + movie.poster_path : 'img/posaman.jpg' " alt="">
 
           <div class="card_content">
-            <p><span class="font_style">Title :</span> {{movie.title ? movie.title : movie.name}}</p>
-            <p><span class="font_style">Original title :</span> {{movie.original_title || movie.original_name}}</p>
+            <p><span class="font_style">Title :</span> {{movie.title}}{{movie.name}}</p>
+            <p><span class="font_style">Original title :</span> {{movie.original_title}}{{movie.original_name}}</p>
             <p><span class="font_style">Original lang:</span><img :src= " 'img/' + movie.original_language + '.png'" alt=""></p>
             <p><span class="font_style">Vote :</span>
               <!-- ciclo i voti dei film e li trasformo in stelle -->
-              <i v-for="n in movie.vote_average" class="fas fa-star"></i>
-              <i v-for="n in (5 - movie.vote_average)" class="far fa-star"></i></p>
+              <i v-for="n in movie.vote_average" class="fas fa-star"></i><i v-for="n in (5 - movie.vote_average)" class="far fa-star"></i></p>
             <p><span class="font_style" v-if="movie.overview">Overview :</span> {{movie.overview}}</p>
           </div>                       <!--se overview è vuoto non mostrarlo-->
         </div>
       </div>
 
+      <!-- wrapper series -->
+      <h2 v-if="series.length != 0">Serie TV</h2>
+      <div class="wrapper_card">
+        <!-- ciclo l'array di series come movie -->
+        <div class="card series" v-for="serie in series">
+          <img :src=" serie.poster_path ? 'https://image.tmdb.org/t/p/w300/' + serie.poster_path : 'img/posaman.jpg' " alt="">
+
+          <div class="card_content">
+            <p><span class="font_style">Title :</span> {{serie.title}}{{serie.name}}</p>
+            <p><span class="font_style">Original title :</span> {{serie.original_title}}{{serie.original_name}}</p>
+            <p><span class="font_style">Original lang:</span><img :src= " 'img/' + serie.original_language + '.png'" alt=""></p>
+            <p><span class="font_style">Vote :</span>
+              <!-- ciclo i voti dei film e li trasformo in stelle -->
+              <i v-for="n in serie.vote_average" class="fas fa-star"></i><i v-for="n in (5 - serie.vote_average)" class="far fa-star"></i></p>
+            <p><span class="font_style" v-if="serie.overview">Overview :</span> {{serie.overview}}</p>
+          </div>                       <!--se overview è vuoto non mostrarlo-->
+        </div>
+      </div>
     </div>
     <!-- javascript -->
     <script src="js/script.js" charset="utf-8"></script>
