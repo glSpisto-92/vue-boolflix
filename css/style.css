@@ -31,7 +31,6 @@ header input{
   background: #333333;
   color: #fff;
 }
-
 header input:focus{
   outline: none;
 }
@@ -87,7 +86,6 @@ header input:focus{
   cursor: pointer;
   position: relative;
 }
-
 .card img{
   width: 100%;
   height: 100%;
@@ -112,7 +110,6 @@ header input:focus{
   height: 100%;
   width: 100%;
 }
-
 .card_content:hover{
   opacity: 1;
   padding: 20px;
