@@ -29,6 +29,7 @@
       </div>                      <!--aggiungo l'evento al click per mostrare i risultati richiamando la function js-->
       </header>
 
+      <h2 class="searches" v-if="movies.length == 0">Effettua una ricerca!</h2>
       <!-- card movie e info -->
       <div class="text_genre" v-if="movies.length != 0"><h2 >Movies...</h2><i class="far fa-arrow-alt-circle-right"></i></div>
       <div v-dragscroll class="wrapper_card">
