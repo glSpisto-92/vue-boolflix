@@ -29,7 +29,6 @@ header input{
   border: 1px solid #DB202C;
   padding: 5px;
   background: lightgrey;
-  color: #fff;
 }
 header input:focus{
   outline: none;
@@ -37,9 +36,19 @@ header input:focus{
 
 h2{
   color: #fff;
-  font-size: 34px;
+  font-size: 36px;
   padding: 20px;
+  margin: 0 10px;
   font-style: italic;
+  background: linear-gradient(to left, #4d4d4d 0%, #d9d9d9 100%);
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+  border-bottom: 2px solid #DB202C;
+  border-left: 2px solid #DB202C;
+  border-radius: 0px 0px 0px 20px;
 }
 
     /* typo */
@@ -84,6 +93,7 @@ h2{
   align-content: center;
   flex-wrap: wrap;
 }
+
 .wrapper_card h2{
   color: #fff;
   font-size: 34px;
@@ -97,7 +107,6 @@ h2{
   margin: 10px 5px;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
   cursor: pointer;
   position: relative;
 }
@@ -110,7 +119,7 @@ h2{
   opacity: 0;
 }
 .card:hover {
-  border: 1px solid #fff;
+  border: 2px solid #cacace;
   background: #000;
 }
 
