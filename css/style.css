@@ -37,18 +37,13 @@ header input:focus{
 h2{
   color: #fff;
   font-size: 36px;
-  padding: 20px;
   margin: 0 10px;
   font-style: italic;
-  background: linear-gradient(to left, #4d4d4d 0%, #d9d9d9 100%);
   color: #FFFFFF;
   text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1),
     0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25),
     0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-  border-bottom: 2px solid #DB202C;
-  border-left: 2px solid #DB202C;
-  border-radius: 0px 0px 0px 20px;
 }
 
     /* typo */
@@ -58,10 +53,12 @@ h2{
   color: #fff;
 }
 
+  /* wrapper all content */
 .wrapper{
   margin: 0 auto;
 }
 
+  /* inputs vari */
 .inputs{
   margin-right: 30px;
 }
@@ -88,10 +85,11 @@ h2{
   color: #000;
 }
 
+  /* wrapper card (card film, serie tv e contenuti) */
 .wrapper_card{
   display: flex;
   align-content: center;
-  flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 .wrapper_card h2{
@@ -101,7 +99,7 @@ h2{
 }
 
 .card{
-  width: 260px;
+  min-width: 260px;
   height: 400px;
   background: #333333;
   margin: 10px 5px;
@@ -141,14 +139,12 @@ h2{
   color: #fff;
   background: #000;
 }
-
 .card_content p:last-child{
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
  .card_content img{
   height: 25px;
   width: 25px;
@@ -160,4 +156,25 @@ h2{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+ .text_genre{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #DB202C;
+  border-left: 2px solid #DB202C;
+  border-radius: 0px 0px 0px 20px;
+  background: linear-gradient(to left, #4d4d4d 0%, #d9d9d9 100%);
+}
+
+.text_genre i {
+  text-align: right;
+  font-size: 28px;
+  color: #fff;
+}
+
+.stars_vote{
+  color: lightgreen;
 }

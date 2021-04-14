@@ -30,8 +30,8 @@
       </header>
 
       <!-- card movie e info -->
-      <h2 v-if="movies.length != 0">Movies...</h2>
-      <div class="wrapper_card">
+      <div class="text_genre" v-if="movies.length != 0"><h2 >Movies...</h2><i class="far fa-arrow-alt-circle-right"></i></div>
+      <div v-dragscroll class="wrapper_card">
                        <!--ciclo l'array di movies per associare i risultati che mi servono-->
         <div class="card" v-for="movie in movies">
           <img :src=" movie.poster_path ? 'https://image.tmdb.org/t/p/w300/' + movie.poster_path : 'img/posaman.jpg' " alt="">
@@ -42,15 +42,15 @@
             <p><span class="font_style">Original lang:</span><img :src= " 'img/' + movie.original_language + '.png'" alt=""></p>
             <p><span class="font_style">Vote :</span>
               <!-- ciclo i voti dei film e li trasformo in stelle -->
-              <i v-for="n in movie.vote_average" class="fas fa-star"></i><i v-for="n in (5 - movie.vote_average)" class="far fa-star"></i></p>
+              <i v-for="n in movie.vote_average" class="stars_vote fas fa-star"></i><i v-for="n in (5 - movie.vote_average)" class="far fa-star"></i></p>
             <p><span class="font_style" v-if="movie.overview">Overview :</span> {{movie.overview}}</p>
           </div>                       <!--se overview è vuoto non mostrarlo-->
         </div>
-      </div>
+    </div>
 
       <!-- wrapper series -->
-      <h2 v-if="series.length != 0">Series...</h2>
-      <div class="wrapper_card">
+      <div class="text_genre" v-if="series.length != 0"><h2 >Series...</h2><i class="far fa-arrow-alt-circle-right"></i></div>
+      <div class="wrapper_card" v-dragscroll>
         <!-- ciclo l'array di series come movie -->
         <div class="card series" v-for="serie in series">
           <img :src=" serie.poster_path ? 'https://image.tmdb.org/t/p/w300/' + serie.poster_path : 'img/posaman.jpg' " alt="">
@@ -61,14 +61,14 @@
             <p><span class="font_style">Original lang:</span><img :src= " 'img/' + serie.original_language + '.png'" alt=""></p>
             <p><span class="font_style">Vote :</span>
               <!-- ciclo i voti dei film e li trasformo in stelle -->
-              <i v-for="n in serie.vote_average" class="fas fa-star"></i><i v-for="n in (5 - serie.vote_average)" class="far fa-star"></i></p>
+              <i v-for="n in serie.vote_average" class="stars_vote fas fa-star"></i><i v-for="n in (5 - serie.vote_average)" class="far fa-star"></i></p>
             <p><span class="font_style" v-if="serie.overview">Overview :</span> {{serie.overview}}</p>
           </div>                       <!--se overview è vuoto non mostrarlo-->
         </div>
       </div>
     <!-- javascript -->
+    <script src="https://unpkg.com/vue"></script>
+      <script src="https://unpkg.com/vue-dragscroll"></script>
     <script src="js/script.js" charset="utf-8"></script>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://unpkg.com/vue-dragscroll"></script>
   </body>
 </html>
